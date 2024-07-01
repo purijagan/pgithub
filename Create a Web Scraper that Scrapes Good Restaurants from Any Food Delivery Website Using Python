@@ -1,0 +1,34 @@
+import requests
+from bs4 import BeautifulSoup
+
+def scrape_restaurants(url):
+    # Send a GET request to the URL
+    response = requests.get(url)
+    
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Parse HTML
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # Find all elements containing restaurant information
+        restaurants = soup.find_all('div', class_='restaurant-info')
+        
+        # Iterate over each restaurant element
+        for restaurant in restaurants:
+            # Extract restaurant name
+            name = restaurant.find('h2', class_='restaurant-name').text.strip()
+            
+            # Extract restaurant rating
+            rating = restaurant.find('span', class_='restaurant-rating').text.strip()
+            
+            # Print or save the extracted data
+            print(f'Restaurant: {name}, Rating: {rating}')
+            
+    else:
+        print(f'Failed to retrieve data from {url}')
+
+# Example usage
+if __name__ == "__main__":
+    # Replace with the URL of the food delivery website's restaurant listing page
+    url = 'https://example.com/restaurants'
+    scrape_restaurants(url)
