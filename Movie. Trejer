@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oye Movie Details</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .details {
+            width: 60%;
+            padding: 20px;
+        }
+        .image {
+            width: 40%;
+            text-align: right;
+        }
+        .image img {
+            width: 250px;
+            border-radius: 10px;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Left side text -->
+    <div class="details">
+        <h2>Movie Name: Oye!</h2>
+        <p><b>Director:</b> Anand Ranga</p>
+        <p><b>Hero:</b> Siddharth</p>
+        <p><b>Heroine:</b> Shamili (Baby Shamili)</p>
+        <p><b>Singer:</b> Shreya Ghoshal</p>
+        <p>
+            <b>Trailer:</b>
+            <a href="https://www.youtube.com/results?search_query=oye+telugu+movie+trailer" target="_blank">
+                Watch Trailer
+            </a>
+        </p>
+    </div>
+
+    <!-- Right side image -->
+    <div class="image">
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/5a/Oye_telugu_movie_poster.jpg" alt="Oye Movie Poster">
+    </div>
+
+</div>
+
+</body>
+</html>
